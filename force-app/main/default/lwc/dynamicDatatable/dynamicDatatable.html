@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <div class="slds-var-m-around_x-small">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered"> 
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th >
+                            <div class="slds-truncate">1</div>
+                        </th>
+                        <template for:each={columnsTest} for:item="column" >
+                            <th key={column.fieldName}>
+                                <div class="slds-truncate">{column.label}</div>
+                            </th>
+                        </template>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </lightning-card>  
+</template>
