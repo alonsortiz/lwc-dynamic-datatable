@@ -1,3 +1,7 @@
+/**
+ * Authors: Alonso Ortiz, Hector Saldana
+ * Description: Hasta la bye bye!
+ */
 import { LightningElement, api, track } from 'lwc';
 
 const columnsTest = [
