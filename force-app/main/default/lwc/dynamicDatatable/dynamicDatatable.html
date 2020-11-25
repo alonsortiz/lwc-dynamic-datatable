@@ -1,19 +1,27 @@
 <template>
     <lightning-card>
-        <div class="slds-var-m-around_x-small">
-            <table class="slds-table slds-table_cell-buffer slds-table_bordered"> 
+        <div class="slds-var-m-around_x-small slds-table slds-table_bordered slds-table_cell-buffer slds-var-m-bottom_large">
+            <table aria-multiselectable="true" class="slds-table slds-no-cell-focus slds-table_bordered slds-table_edit slds-table_fixed-layout slds-table_resizable-cols" role="grid"> 
                 <thead>
                     <tr class="slds-line-height_reset">
-                        <th >
-                            <div class="slds-truncate">1</div>
-                        </th>
-                        <template for:each={columnsTest} for:item="column" >
+                        <template for:each={columns} for:item="column" >
                             <th key={column.fieldName}>
                                 <div class="slds-truncate">{column.label}</div>
                             </th>
                         </template>
                     </tr>
                 </thead>
+                <tbody>
+                    <template for:each={tableData} for:item="row" for:index="index">
+                        <tr class="slds-hint-parent" key={row.id}>
+                            <template for:each={columns} for:item="column" for:index="tdIndex">
+                                <td key={column.fieldName}>
+                                    <c-table-cell row={row} field={column.fieldName}></c-table-cell>
+                                </td>
+                            </template>
+                        </tr>
+                    </template>
+                </tbody>
             </table>
         </div>
     </lightning-card>  

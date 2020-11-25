@@ -9,6 +9,13 @@
 # LWC VSCode autocomplete
 **/lwc/jsconfig.json
 
+# LWC Components used for testing purposes
+**/lwc/accountsInfo
+**/lwc/opportunityInfo
+
+# Flexipages
+**/flexipages
+
 # LWC Jest coverage reports
 coverage/
 
